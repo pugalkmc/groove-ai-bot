@@ -1,0 +1,10 @@
+aiohttp
+asgiref
+asyncio
+better-profanity
+fastapi
+Flask
+pymongo
+python-telegram-bot
+spacy
+uvicorn

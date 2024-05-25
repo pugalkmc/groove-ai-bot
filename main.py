@@ -2,69 +2,48 @@ import asyncio
 from dataclasses import dataclass
 import html
 from http import HTTPStatus
-import random
-import datetime
 import time
+
 from fastapi import Response
 from flask import Flask, jsonify, make_response, request
 from asgiref.wsgi import WsgiToAsgi
-from telegram import Bot, Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import Bot, Update, ChatPermissions
+from telegram.constants import ParseMode
 from telegram.ext import (
-    CallbackQueryHandler,
     MessageHandler,
     filters,
-    ConversationHandler,
     Application
 )
 from telegram.ext import (
     CommandHandler,
     MessageHandler,
     filters,
-    CallbackQueryHandler,
     CallbackContext,
     ContextTypes,
-    Updater,
     ExtBot,
     TypeHandler
 )
 
+from better_profanity import profanity
+from pymongo import MongoClient
+
 import admin_operations
 import greeting
 import auto_mod
-
-import os
-from collections import deque
-from pinecone import Pinecone
-import logging
-from telegram.constants import ParseMode
-import uvicorn
 import config
-import google.generativeai as genai
-
-bot = Bot(config.BOT_TOKEN)
-
-
-import spacy
-import os
-from pinecone import Pinecone
-from llama_index.llms.gemini import Gemini
-from llama_index.vector_stores.pinecone import PineconeVectorStore
-from llama_index.embeddings.gemini import GeminiEmbedding
-from llama_index.core import StorageContext, VectorStoreIndex, download_loader
-from llama_index.core import Settings
-from llama_index.readers.web import BeautifulSoupWebReader
-from config import *
-
-from collections import deque
-from better_profanity import profanity
-from telegram import ChatPermissions
 import gemini
 import links
 
-from pymongo import MongoClient
-
-from google.generativeai.types import HarmCategory, HarmBlockThreshold
+import os
 import json
+from collections import deque
+
+import spacy
+import logging
+import uvicorn
+
+
+bot = Bot(config.BOT_TOKEN)
 
 # Function to write a list to a JSON file
 def write_list_to_json(lst, file_path):
