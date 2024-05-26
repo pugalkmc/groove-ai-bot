@@ -362,7 +362,7 @@ async def main() -> None:
     webserver = uvicorn.Server(
         config=uvicorn.Config(
             app=WsgiToAsgi(flask_app),
-            port=config.PORT,
+            port=8443,
             use_colors=False,
             host="0.0.0.0",
         )
