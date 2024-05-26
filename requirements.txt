@@ -6,7 +6,7 @@ fastapi
 Flask
 pymongo
 python-telegram-bot
-spacy
+# spacy
 uvicorn
 faiss-cpu
 sentence-transformers

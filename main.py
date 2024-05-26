@@ -38,7 +38,7 @@ import os
 import json
 from collections import deque
 
-import spacy
+# import spacy
 import logging
 import uvicorn
 
@@ -78,7 +78,7 @@ client = MongoClient('mongodb+srv://pugalkmc:pugalkmc@cluster0.dzcnjxc.mongodb.n
 db = client['telegram_bot_db']
 profanity_collection = db['profanity_history']
 
-nlp = spacy.load("en_core_web_sm")
+# nlp = spacy.load("en_core_web_sm")
 profanity.load_censor_words()
 
 # Enable logging
@@ -200,14 +200,14 @@ profanity.load_censor_words()
 MUTE_THRESHOLD = 3
 BAN_THRESHOLD = 5
 
-def is_question(text):
-    doc = nlp(text)
-    if doc[-1].text == "?":
-        return True
-    for token in doc:
-        if token.tag_ in ["WP", "WP$", "WRB"]:
-            return True
-    return False
+# def is_question(text):
+#     doc = nlp(text)
+#     if doc[-1].text == "?":
+#         return True
+#     for token in doc:
+#         if token.tag_ in ["WP", "WP$", "WRB"]:
+#             return True
+#     return False
 
 
 async def message_handler(update, context):
@@ -267,7 +267,10 @@ async def message_handler(update, context):
         chat_memory[user_id].append((text, "Please avoid using offensive language."))
         return
     
-    if not (is_question(text) or is_tagged or is_reply):
+    # if not (is_question(text) or is_tagged or is_reply):
+    #     return
+    
+    if not (is_tagged or is_reply):
         return
     
     is_done = False
