@@ -7,7 +7,7 @@ from database import (
 )
 import random
 
-# from main import logger
+from main import logger
 
 async def is_target_bot(update: Update, context: CallbackContext) -> bool:
     bot = context.bot
