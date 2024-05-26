@@ -1,6 +1,6 @@
 import faiss
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.document_loaders import WebBaseLoader, PyPDFLoader
+from langchain_community.document_loaders import WebBaseLoader, PyPDFLoader
 from sentence_transformers import SentenceTransformer
 
 import google.generativeai as genai
