@@ -8,3 +8,10 @@ pymongo
 python-telegram-bot
 spacy
 uvicorn
+faiss-cpu
+sentence-transformers
+google-generativeai
+dnspython
+better-profanity
+langchain-community
+langchain
