@@ -5,6 +5,7 @@ from database import (
     mutes_col,
     warnings_col
 )
+import random
 
 from main import logger
 
@@ -21,8 +22,6 @@ async def is_admin(update: Update):
     user_id = update.effective_user.id
     chat_admins = await update.effective_chat.get_administrators()
     return any(admin.user.id == user_id for admin in chat_admins)
-
-import random
 
 funny_responses = [
     "Nice try! But I can't perform that action on myself.",

@@ -16,3 +16,4 @@ better-profanity
 langchain-community
 langchain
 bs4
+python-dotenv
