@@ -2,7 +2,7 @@ import logging
 from datetime import datetime, timedelta
 from pymongo import MongoClient
 from telegram import Update, ChatPermissions, ChatMember
-from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, CallbackContext
+from telegram.ext import ApplicationBuilder, CallbackContext
 import config
 
 # MongoDB setup

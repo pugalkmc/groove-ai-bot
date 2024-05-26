@@ -5,7 +5,6 @@ from llama_index.vector_stores.pinecone import PineconeVectorStore
 from llama_index.embeddings.gemini import GeminiEmbedding
 from llama_index.core import StorageContext, VectorStoreIndex, download_loader
 from llama_index.core import Settings
-from llama_index.readers.web import BeautifulSoupWebReader
 from config import *
 
 from collections import deque

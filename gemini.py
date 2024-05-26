@@ -1,7 +1,4 @@
-import os
 import faiss
-import numpy as np
-from PyPDF2 import PdfFileReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.document_loaders import WebBaseLoader, PyPDFLoader
 from sentence_transformers import SentenceTransformer
